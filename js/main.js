@@ -1,4 +1,3 @@
-
 // Variables globales
 let nombreUsuario = prompt('Bienvenido a Open Culture Club, ¿Cual es tu nombre?');
 const tusGenPelis = [];
@@ -6,32 +5,44 @@ const tusActores = [];
 const tusGenMusica = [];
 const tusGustos = tusGenPelis.concat(tusGenMusica.join('\n'));
 
+let SelectGenPelis1;
+let SelectGenPelis2;
+let SelectGenPelis3;
+
+let SelectGenMusica1;
+let SelectGenMusica2;
+let SelectGenMusica3;
+
+
 // Funciones
 
-// Funcion Menu Editar Gen Pelis
+//PELÍCULAS
 
+// Función Menu Determinar los generos de peliculas del usuario
 
-// Gen Pelis
 function detGenPelis() {
 
-let SelectGenPelis1 = prompt('Indica tu estilo de pelicula favorito:\n Ej, "Acción"');
-tusGenPelis.push(SelectGenPelis1);
-sugerir1();
-let SelectGenPelis2 = prompt('Indica tu Segundo estilo de pelicula favorito:\n Ej, "Comedia"');
-tusGenPelis.push(SelectGenPelis2)
-let SelectGenPelis3 = prompt('Indica tu Segundo estilo de pelicula favorito:\n Ej, "Romántica"');
-tusGenPelis.push(SelectGenPelis3);
-// con un forEach quisiera añadir join(', ) pero no me sale
-;
-alert(`Gracias ${nombreUsuario} estas son tus 3 generos preferidos ${tusGenPelis}`)
-menuGenPelis();
+    SelectGenPelis1 = prompt('Indica tu estilo de pelicula favorito:\n Ej: "Acción"');
+    tusGenPelis.push(SelectGenPelis1);
+    sugerir1();
+
+    SelectGenPelis2 = prompt('Indica tu Segundo estilo de pelicula favorito:\n Ej: "Comedia"');
+    tusGenPelis.push(SelectGenPelis2)
+    
+    SelectGenPelis3 = prompt('Indica tu Segundo estilo de pelicula favorito:\n Ej: "Romántica"');
+    tusGenPelis.push(SelectGenPelis3);
+
+    alert(`Gracias ${nombreUsuario} estas son tus 3 generos preferidos ${tusGenPelis.join(', ')}`)
+    menuGenPelis();
 }
 
 detGenPelis();
 
+// Función Menu para editar o continuar Generos de Películas
+
 function menuGenPelis() { 
 
-    let opcionMenu = Number(prompt('Eliga una opción: \n\n1 - Añadir más generos.\n2 - Volver a Indicar sus 3 generos favoritos \n3 - Continuar'));;
+    let opcionMenu = Number(prompt('Eliga una opción: \n\n 1 - Añadir más generos.\n 2 - Volver a Indicar sus 3 generos favoritos \n 3 - Continuar'));;
 
         do {
             switch (opcionMenu) {
@@ -52,32 +63,32 @@ function menuGenPelis() {
 
 }
 
-// MENU Editar Generos Pelis
-
-// Agregar más Generos
+// Agregar más Generos de Películas
 function agregarGenPelis() {
-    for (i = 0; i < 3; i++){
-        let GenPeliAgregar = prompt('Escriba aqui su genero a agregar, máximo 3');
+        let GenPeliAgregar = prompt('Escriba aqui su genero a agregar');
         tusGenPelis.push(GenPeliAgregar);
-    }
+        alert(`Tus generos de Películas actualizados son ${tusGenPelis.join(', ')}`);
+        menuGenPelis();
 }
 
-// Determinar Guastos Músicales
+// MÚSICA
+
+// Función Menu Determinar los generos de Música del usuario
 
 function detGenMusica() {
 
-    let SelectGenMusica1 = prompt('Indica tu estilo de música favorito:\n Ej, "Rock"');
-    tusGenPelis.push(SelectGenMusica1);
-    let SelectGenPelis2 = prompt('Indica tu Segundo estilo de música favorito:\n Ej, "Pop"');
-    tusGenPelis.push(SelectGenMusica2)
-    let SelectGenPelis3 = prompt('Indica tu Segundo estilo de música favorito:\n Ej, "Bachata"');
-    tusGenPelis.push(SelectGenMusica3);
-    // con un forEach quisiera añadir join(', ) pero no me sale
+    SelectGenMusica1 = prompt('Indica tu estilo de música favorito:\n Ej, "Rock"');
+    tusGenMusica.push(SelectGenMusica1);
+    SelectGenMusica2 = prompt('Indica tu Segundo estilo de música favorito:\n Ej, "Pop"');
+    tusGenMusica.push(SelectGenMusica2)
+    SelectGenMusica3 = prompt('Indica tu Segundo estilo de música favorito:\n Ej, "Bachata"');
+    tusGenMusica.push(SelectGenMusica3);
     ;
-    alert(`Gracias ${nombreUsuario} estas son tus 3 generos preferidos ${tusGenMusica}`)
+    alert(`Gracias ${nombreUsuario} estas son tus 3 generos preferidos ${tusGenMusica.join(', ')}`)
     menuGenMusica();
 }
 
+// Función Menu para editar o continuar Generos Músicales
 
 function menuGenMusica() { 
 
@@ -104,12 +115,15 @@ function menuGenMusica() {
         } while (opcionMenu !==3)
 }
 
+// Agregar más Generos de Películas
+
 function agregarGenMúsica() {
-    for (i = 0; i < 3; i++){
-        let GenMusiAgregar = prompt('Escriba aqui su genero a agregar, máximo 3');
+        let GenMusiAgregar = prompt('Escriba aqui su genero a agregar');
         tusGenMusica.push(GenMusiAgregar);
+        alert(`Tus generos de Música actualizados son ${tusGenPelis.join(', ')}`);
+        menuGenPelis();
     }
-}
+
 
 
 // Suguerir
