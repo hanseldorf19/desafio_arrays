@@ -3,7 +3,7 @@ let naneUser = prompt('Bienvenido a Open Culture Club, ¿Cual es tu nombre?');
 const tusGenPelis = [];
 const tusActores = [];
 const tusGenMusica = [];
-
+const tusGustos = tusGenPelis.concat(tusGenMusica).join('\n');
 
 let SelectGenPelis1;
 let SelectGenPelis2;
@@ -102,7 +102,6 @@ function menuGenMusica() {
                     detGenMusica();
                     break;
                 case 3:
-                        const tusGustos = tusGenPelis.concat(tusGenMusica).join('\n');
                         alert(`Enhorabuena, estos son tus generos seleccionados:
                          \n ${tusGustos}`);
                         break; 
