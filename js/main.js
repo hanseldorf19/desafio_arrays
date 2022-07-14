@@ -1,9 +1,9 @@
 // Variables globales
-let nombreUsuario = prompt('Bienvenido a Open Culture Club, ¿Cual es tu nombre?');
+let naneUser = prompt('Bienvenido a Open Culture Club, ¿Cual es tu nombre?');
 const tusGenPelis = [];
 const tusActores = [];
 const tusGenMusica = [];
-const tusGustos = tusGenPelis.concat(tusGenMusica.join('\n'));
+const tusGustos = tusGenPelis.concat(tusGenMusica).join('\n');
 
 let SelectGenPelis1;
 let SelectGenPelis2;
@@ -32,7 +32,7 @@ function detGenPelis() {
     SelectGenPelis3 = prompt('Indica tu Segundo estilo de pelicula favorito:\n Ej: "Romántica"');
     tusGenPelis.push(SelectGenPelis3);
 
-    alert(`Gracias ${nombreUsuario} estas son tus 3 generos preferidos ${tusGenPelis.join(', ')}`)
+    alert(`Gracias estos son tus 3 generos preferidos ${tusGenPelis.join(', ')}`)
     menuGenPelis();
 }
 
@@ -83,8 +83,7 @@ function detGenMusica() {
     tusGenMusica.push(SelectGenMusica2)
     SelectGenMusica3 = prompt('Indica tu Segundo estilo de música favorito:\n Ej, "Bachata"');
     tusGenMusica.push(SelectGenMusica3);
-    ;
-    alert(`Gracias ${nombreUsuario} estas son tus 3 generos preferidos ${tusGenMusica.join(', ')}`)
+    alert(`Gracias, estas son tus 3 generos preferidos ${tusGenMusica.join(', ')}`)
     menuGenMusica();
 }
 
@@ -103,7 +102,7 @@ function menuGenMusica() {
                     detGenMusica();
                     break;
                 case 3:
-                        alert(`Enhorabuena ${nombreUsuario}, estos son tus generos seleccionados:
+                        alert(`Enhorabuena, estos son tus generos seleccionados:
                          \n ${tusGustos}`);
                         break; 
                 
@@ -120,7 +119,7 @@ function menuGenMusica() {
 function agregarGenMúsica() {
         let GenMusiAgregar = prompt('Escriba aqui su genero a agregar');
         tusGenMusica.push(GenMusiAgregar);
-        alert(`Tus generos de Música actualizados son ${tusGenPelis.join(', ')}`);
+        console.log(`Tus generos de Música actualizados son ${tusGenPelis.join(', ')}`);
         menuGenPelis();
     }
 
@@ -142,6 +141,7 @@ let opcion = Number(prompt(`Quizá te guste este artista. elija:
 switch (opcion) {
     case 1:
         tusActores.push('Arnold Swarzeneger');
+        console.log(tusActores);
         break;
     case 2:
         sugerir2();    
@@ -165,6 +165,7 @@ function sugerir2(){
 switch (opcion) {
     case 1:
         tusActores.push('Arnold Swarzeneger');
+        console.log(tusActores);
         break;
     case 2:
         alert('Bye, bye');    
